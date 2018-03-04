@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.artist.web.popularmovies.activity.DetailMovieActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true">
+
+<android.support.constraint.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/side_nav_bar">
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:contentDescription="@string/header_description"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/margin_16dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/margin_16dp"/>
+
+    <ImageView
+        android:id="@+id/imageViewPoster"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/poster_height"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:contentDescription="@string/poster_description"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewHeader"
+        app:layout_constraintDimensionRatio="w,2:3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHeader"
+        app:srcCompat="@drawable/poster"/>
+
+    <TextView
+        android:id="@+id/textViewMovieHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_4dp"
+        android:padding="@dimen/padding_4dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toStartOf="@+id/fav_button"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPoster"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHeader"
+        tools:text="Beauty and the Beast"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/textViewMovieHeading"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHeader"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewHeader"
+        app:srcCompat="@drawable/ic_favorite"/>
+
+    <TextView
+        android:id="@+id/textViewRating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:drawableStart="@drawable/star"
+        android:drawablePadding="@dimen/padding_4dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_18sp"
+        tools:text="6.4"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPoster"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMovieHeading"/>
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="March 2017"
+        android:layout_marginStart="@dimen/margin_10dp"
+        android:textSize="18sp"
+        android:drawableStart="@drawable/ic_date"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:drawablePadding="@dimen/padding_4dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/textViewRating"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMovieHeading"/>
+
+    <TextView
+        android:id="@+id/textViewOverviewLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overview_label"
+        app:layout_constraintTop_toBottomOf="@id/textViewRating"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        android:textSize="@dimen/text_22sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:fontFamily="sans-serif-smallcaps"/>
+
+    <TextView
+        android:id="@+id/textViewOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOverviewLabel"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        android:textSize="@dimen/text_14sp"
+        android:textColor="@color/white"
+        android:lineSpacingMultiplier="1"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        tools:text="Lorem Ipsumnnbdvjbhjvbhfvbjfdjhfbvjhvbh vbdhbvhjf"
+        app:layout_constraintRight_toRightOf="@id/guideline2"/>
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
